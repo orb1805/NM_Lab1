@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">NM_Lab1</string>
+    <string name="x1">x1</string>
+    <string name="x2">x2</string>
+    <string name="x3">x3</string>
+    <string name="x4">x4</string>
+    <string name="plus">+</string>
+    <string name="default_value">1</string>
+    <string name="l_matrix">L-матрица</string>
+    <string name="u_matrix">U-матрица</string>
+    <string name="solution">РЕШЕНИЕ</string>
+    <string name="determinant">ОПРЕДЕЛИТЕЛЬ</string>
+    <string name="inversed_a">Обратная A</string>
+    <string name="aa_1">AA^(-1)</string>
+    <string name="solve">РЕШИТЬ</string>
+    <string name="x5">x5</string>
+    <string name="precision">Точность</string>
+    <string name="number_of_iterations">КОЛИЧЕСТВО ИТЕРАЦИЙ</string>
+    <string name="lu_solve_method">Метод LU-разложения</string>
+    <string name="tridiagonal_solve_method">Метод прогонки</string>
+    <string name="fpi_sovle_method">Метод простых итераций</string>
+    <string name="seidel_solve_method">Метод Зейделя</string>
+    <string name="jacobi_method">Метод вращений</string>
+    <string name="eigenvalues">Собственные значения</string>
+    <string name="eigenvectors">Собственные векторы</string>
+    <string name="qr_method">Метод QR-разложения</string>
+    <string name="precision_value">0.001</string>
+    <string name="q_matrix">Матрица Q</string>
+    <string name="r_matrix">Матрица R</string>
+</resources>

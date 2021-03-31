@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JacobiSolveActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/jacobi_method"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/system_size"/>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_a11"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/et_a12"
+                    android:text="-7"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <EditText
+                    android:id="@+id/et_a13"
+                    android:text="7"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_a21"
+                    android:text="-7"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <EditText
+                    android:id="@+id/et_a22"
+                    android:text="-9"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <EditText
+                    android:id="@+id/et_a23"
+                    android:text="-5"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_a31"
+                    android:text="7"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <EditText
+                    android:id="@+id/et_a32"
+                    android:text="-5"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <EditText
+                    android:id="@+id/et_a33"
+                    android:text="-1"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:textSize="@dimen/system_size"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/precision"/>
+
+                <EditText
+                    android:id="@+id/et_precision"
+                    android:typeface="monospace"
+                    android:text="@string/precision_value"
+                    android:inputType="numberDecimal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_solve"
+                android:text="@string/solve"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_iterations_sign"
+                    android:text="@string/number_of_iterations"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_iterations_number"
+                    android:typeface="monospace"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_eigenvalues"
+                android:text="@string/eigenvalues"
+                android:textSize="@dimen/system_size"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_ev1"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev2"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev3"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_eigenvectors"
+                android:text="@string/eigenvectors"
+                android:textSize="@dimen/system_size"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_ev11"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev21"
+                    android:text="@string/default_value"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev31"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_ev12"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev22"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev32"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/default_value"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_ev13"
+                    android:text="@string/default_value"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev23"
+                    android:text="@string/default_value"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ev33"
+                    android:text="@string/default_value"
+                    android:typeface="monospace"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/numeric_size"
+                    android:layout_weight="@string/default_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
